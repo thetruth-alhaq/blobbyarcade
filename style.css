@@ -176,7 +176,17 @@ nav a:hover { color: var(--ink); background: var(--card); }
 .btn.primary { background: var(--btn); box-shadow: 0 10px 26px rgba(247,37,133,0.4); }
 .btn.ghost { background: var(--card); border: 1px solid var(--card-border); }
 .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(247,37,133,0.55); }
+.btn.ghost:hover { transform: translateY(-2px); }
 .btn svg { width: 22px; height: 22px; }
+/* store-status tag on a CTA button (SOON / AVAILABLE) */
+.btn { position: relative; }
+.btn .tag {
+  position: absolute; top: -9px; inset-inline-end: -7px;
+  font-size: 0.62rem; font-weight: 900; letter-spacing: 0.06em;
+  padding: 3px 9px; border-radius: 999px; line-height: 1;
+}
+.btn .tag.soon  { background: #ffd166; color: #4a3200; }
+.btn .tag.avail { background: #4ade80; color: #052e12; }
 
 /* ---------- sections ---------- */
 section { max-width: 1080px; margin: 0 auto; padding: 44px 20px; }
