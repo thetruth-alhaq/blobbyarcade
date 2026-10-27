@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blobby Arcade — Activate</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#12082b;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  .card{max-width:640px;padding:40px;text-align:center}
+  h1{font-size:28px;color:#ffd76a}
+  .code{display:block;width:100%;margin:24px 0;padding:20px;font-size:22px;font-family:monospace;word-break:break-all;background:#241040;border:3px solid #fa5c5c;border-radius:14px;color:#fff;box-sizing:border-box}
+  .btn{background:#fa5c5c;color:#fff;border:none;padding:14px 34px;font-size:18px;border-radius:12px;cursor:pointer;font-weight:700}
+  .hint{opacity:.75;font-size:14px;margin-top:18px}
+  .ok{color:#7be3a8}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1 id="t">Activating Blobby Arcade…</h1>
+  <p id="msg">If this page has a code below, copy it and paste it into the game's activation box.</p>
+  <div class="code" id="code">…</div>
+  <button class="btn" id="copy" onclick="copyCode()">Copy code</button>
+  <p class="hint">Blobby Arcade: Party Games · SheGoz Technologies</p>
+</div>
+<script>
+var code = "";
+// PKCE authorization-code flow: ?code=XXX arrives as a query param.
+var q = new URLSearchParams(location.search);
+code = q.get("code") || "";
+// implicit flow (older clients): #access_token=YYY in the hash.
+if (!code && location.hash) {
+  var h = new URLSearchParams(location.hash.slice(1));
+  code = h.get("access_token") || "";
+}
+if (code) {
+  document.getElementById("code").textContent = code;
+  document.getElementById("t").textContent = "Almost done!";
+} else {
+  document.getElementById("code").textContent = "no code received";
+  document.getElementById("msg").textContent =
+    "This page is the sign-in landing for Blobby Arcade activation. " +
+    "If you arrived here by accident, nothing to copy.";
+  document.getElementById("copy").style.display = "none";
+}
+function copyCode() {
+  navigator.clipboard.writeText(code).then(function () {
+    var b = document.getElementById("copy");
+    b.textContent = "Copied! Paste it in the game";
+    b.className = "btn ok";
+  });
+}
+</script>
+</body>
+</html>
