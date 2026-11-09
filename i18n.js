@@ -56,6 +56,8 @@ en: {
   f6t: "Made for kids, trusted by parents", f6d: "Zero ads, zero in-app purchases, zero data collection. Pay once, own it forever.",
   games_title: "A whole arcade inside one game",
   games_sub: "Every mini-game is a complete game with its own levels, bots and Wi-Fi mode:",
+  trailer_title: "Watch it in action",
+  trailer_sub: "Real gameplay, real mini-games - see what the arcade looks like before you download.",
   gchip: ["Gobble Reef","Match It","Peek & Find","Sky Painters","Paint Racers","Color Jump","Flick Soccer","Penalty Kick","Hoop Splash","Blob Snake","Paint Ocho","Blob Dash","Super Mozi","Dinner Dash","Dress Up","River Cross","Word Bus","Draw & Guess","Memory Match","Mini Golf","Darts Duel","Tic-Tac-Toe","Bullshit!","Hidden Objects"],
   parents_title: "A note for parents",
   parents_sub: "We built Blobby Arcade the way we'd want a kids' game to be:",
